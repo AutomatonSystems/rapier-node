@@ -1,3 +1,6 @@
+import {performance} from "perf_hooks";
+globalThis.performance = performance;
+
 import * as Rapier from "@dimforge/rapier2d";
 
 // create world and event queue
