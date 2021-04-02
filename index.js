@@ -16,7 +16,6 @@ Rapier.init()
 	// create world and event queue
 	let world = new Rapier.World({x:0, y:0});
 	let events = new Rapier.EventQueue(true);
-	console.log(world, events);
 
 	// create two entities on a collision course
 	let e1 = makeEntity(-1, 0.1, 1, 0, 0.5);
@@ -27,7 +26,7 @@ Rapier.init()
 		world.step(events);
 
 		events.drainContactEvents((handle1, handle2, contactStarted) => {
-			console.log("Contact between:", handle1, "and", handle2, ". Started:", contactStarted);
+			console.log(`Contact between: ${handle1} and ${handle2}. Started: ${contactStarted}`);
 		});
 		
 		let t1 = e1.translation();
