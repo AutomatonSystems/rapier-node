@@ -1,7 +1,6 @@
 {
   "name": "rapier-node",
   "version": "1.0.0",
-  "type": "module",
   "description": "A basic example of rapier.js working in node",
   "main": "index.js",
   "scripts": {
@@ -10,6 +9,7 @@
   "author": "Automaton.systems",
   "license": "ISC",
   "dependencies": {
-    "@dimforge/rapier2d": "^0.1.5"
+    "@dimforge/rapier2d-compat": "^0.4.0",
+    "atob": "^2.1.2"
   }
 }

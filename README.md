@@ -1,30 +1,15 @@
 # rapier-node
-Minimal example of rapier.js working in node to simulate a very basic scene.
+Minimal example of rapier.js working in node (v14) to simulate a very basic scene.
 
 ## Usage
 
-There are a few hacks to use the @dimforge/rapier2d package directly in node:
-
-* checkout repo
-* npm install
-* Change @dimforge/rapier2d package.json to allow node esmodule imports:
-
-	To enable node to load the package add the following key/values:
-	* `"main": "rapier2d.js"`
-	* `"type": "module"`
-
-## Running
-
-With the packagge.json fixed it is possible to run the code:
-
-`node --experimental-wasm-modules index.js`
+* `npm install`
+* `node index.js`
 
 You should see console output showing the position of the two entities every tick with additional event logging when they impact and seperate.
 
-## Notes 
+## Notes
 
-The code starts by leaking the `perf_hooks.performance` object onto the global scope, which allows rapier to call it as if we were in a browser context
-`
-import {performance} from "perf_hooks";
-globalThis.performance = performance;
-`
+There are a few hacks required to use the @dimforge/rapier2d-compat package directly in node, they just involve setting up a few enviroment properties that are expected they can be seen at the top of index.js.
+
+The @dimforge/rapier2d package can be used instead of the compat version, but requires a webpack configuration to build.
